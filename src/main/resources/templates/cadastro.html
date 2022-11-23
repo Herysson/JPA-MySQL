@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html xmlns:th="httpd://wwww.thymeleaf.org">
+<head>
+    <meta charset="utf-8">
+    <title>Cadastro de Pessoas</title>
+</head>
+<body>
+<h1>Registro de Pessoas</h1>
+<form action="#" th:action="@{/pessoa/save}" th:object="${pessoa}"
+      method="post">
+    <table>
+        <tr>
+            <td>Nome*:</td>
+            <td><input type="text" th:field="*{nome}" required/></td>
+        </tr>
+        <tr>
+            <td>E-mail*:</td>
+            <td><input type="text" th:field="*{email}" required/></td>
+        </tr>
+        <tr>
+            <td>Fone*:</td>
+            <td><input type="text" th:field="*{fone}" required/></td>
+        </tr>
+    </table>
+    <input type="submit"/>
+</form>
+</body>
+</html>
