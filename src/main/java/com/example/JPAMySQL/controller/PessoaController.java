@@ -17,6 +17,11 @@ public class PessoaController {
     @Autowired//Marcação do atributo que acessa o CRUD de pessoa
     private PessoaRepository pessoaRepository;
 
+    @GetMapping("/index")
+    public String cadastrarPessoa(){
+
+        return "Exemplo";
+    }
     @GetMapping("/cadastrar")
     public String cadastrarPessoa(Model model){
         //madar um objeto do tipo Pessoa para a pagina cadastro
@@ -35,6 +40,7 @@ public class PessoaController {
     public String salvarPessoa(@ModelAttribute Pessoa pessoa, Model model){
         //Salva no banco o objeto do tipo Pessoa com as informações da pagina cadastro
         pessoaRepository.save(pessoa);
+        //Cria uma lista atualizada das pessoas cadastradas
         List<Pessoa> listaPessoa = (List<Pessoa>) pessoaRepository.findAll();
         model.addAttribute("pessoas", listaPessoa);
         return "listarPessoas";
