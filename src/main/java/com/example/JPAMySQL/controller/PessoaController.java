@@ -1,7 +1,7 @@
 package com.example.JPAMySQL.controller;
 
 import com.example.JPAMySQL.model.Pessoa;
-import com.example.JPAMySQL.model.PessoaRepository;
+import com.example.JPAMySQL.repository.PessoaRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.stereotype.Controller;
@@ -21,8 +21,8 @@ public class PessoaController {
     public String cadastrarPessoa(Model model){
         //madar um objeto do tipo Pessoa para a pagina cadastro
         model.addAttribute("pessoa", new Pessoa());
-        //redirecionando para pagina cadastro.html
-        return "cadastro";
+        //redirecionando para pagina cadastrarPessoa.html
+        return "cadastrarPessoa";
     }
     @GetMapping("/listar")
     public String listarProdutos(@ModelAttribute Pessoa pessoa, Model model) {
